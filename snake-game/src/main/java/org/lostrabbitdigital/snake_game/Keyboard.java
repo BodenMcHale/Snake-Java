@@ -5,6 +5,7 @@ import java.awt.event.KeyEvent;
 
 public class Keyboard extends KeyAdapter {
 
+	// TODO: Change this to VKs instead of int
 	public void keyPressed(KeyEvent e) {
 		switch (e.getKeyCode()) {
 			case 39: // -> Right

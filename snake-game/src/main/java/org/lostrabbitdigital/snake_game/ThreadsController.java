@@ -21,11 +21,12 @@ public class ThreadsController extends Thread {
 		headSnakePos = new Tuple(positionDepart.x, positionDepart.y);
 		directionSnake = 1;
 
+		// TODO: What even is this, man?
 		// !!! Pointer !!!!
 		Tuple headPos = new Tuple(headSnakePos.getX(), headSnakePos.getY());
 		positions.add(headPos);
 
-		foodPosition = new Tuple(Window.height - 1, Window.width - 1);
+		foodPosition = new Tuple(Window.height / 2, Window.width / 2);
 		spawnFood(foodPosition);
 
 	}
@@ -33,9 +34,9 @@ public class ThreadsController extends Thread {
 	// Important part :
 	public void run() {
 		while (true) {
-			moveInterne(directionSnake);
+			renderSnake();
+			moveSnake(directionSnake);
 			checkCollision();
-			moveSnake();
 			deleteTail();
 			pauser();
 		}
@@ -100,42 +101,43 @@ public class ThreadsController extends Thread {
 		}
 		return p;
 	}
-
+	
+	// TODO: Rename this function
 	// Moves the head of the snake and refreshes the positions in the arraylist
 	// 1:right 2:left 3:top 4:bottom 0:nothing
-	private void moveInterne(int dir) {
+	private void moveSnake(int dir) {
 		switch (dir) {
 			case 4:
-				headSnakePos.ChangeData(headSnakePos.x, (headSnakePos.y + 1) % 20);
+				headSnakePos.ChangeData(headSnakePos.x, (headSnakePos.y + 1) % Window.width);
 				positions.add(new Tuple(headSnakePos.x, headSnakePos.y));
 				break;
 			case 3:
 				if (headSnakePos.y - 1 < 0) {
-					headSnakePos.ChangeData(headSnakePos.x, 19);
+					headSnakePos.ChangeData(headSnakePos.x, Window.width - 1);
 				} else {
-					headSnakePos.ChangeData(headSnakePos.x, Math.abs(headSnakePos.y - 1) % 20);
+					headSnakePos.ChangeData(headSnakePos.x, Math.abs(headSnakePos.y - 1) % Window.width);
 				}
 				positions.add(new Tuple(headSnakePos.x, headSnakePos.y));
 				break;
 			case 2:
 				if (headSnakePos.x - 1 < 0) {
-					headSnakePos.ChangeData(19, headSnakePos.y);
+					headSnakePos.ChangeData(Window.height - 1, headSnakePos.y);
 				} else {
-					headSnakePos.ChangeData(Math.abs(headSnakePos.x - 1) % 20, headSnakePos.y);
+					headSnakePos.ChangeData(Math.abs(headSnakePos.x - 1) % Window.height, headSnakePos.y);
 				}
 				positions.add(new Tuple(headSnakePos.x, headSnakePos.y));
 
 				break;
 			case 1:
-				headSnakePos.ChangeData(Math.abs(headSnakePos.x + 1) % 20, headSnakePos.y);
+				headSnakePos.ChangeData(Math.abs(headSnakePos.x + 1) % Window.height, headSnakePos.y);
 				positions.add(new Tuple(headSnakePos.x, headSnakePos.y));
 				break;
 		}
 	}
 
 	// TODO: Rename this and explain
-	// Refresh the squares that needs to be
-	private void moveSnake() {
+	// Refresh the tiles that needs to be
+	private void renderSnake() {
 		for (Tuple t : positions) {
 			int y = t.getX();
 			int x = t.getY();
