@@ -1,3 +1,5 @@
+package org.lostrabbitdigital.snake_game;
+
 import java.util.ArrayList;
 
 //Controls all the game logic .. most important class in this project.
@@ -146,7 +148,7 @@ public class ThreadsController extends Thread {
 	// positions arraylist
 	// and refreshing the display of the things that is removed
 	private void deleteTail() {
-		// TODO: Rename currentPosition to something more accurate 
+		// TODO: Rename currentPosition to something more accurate
 		int currentPosition = sizeSnake;
 		for (int i = positions.size() - 1; i >= 0; i--) {
 			if (currentPosition == 0) {

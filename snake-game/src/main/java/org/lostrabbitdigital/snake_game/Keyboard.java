@@ -1,3 +1,5 @@
+package org.lostrabbitdigital.snake_game;
+
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 

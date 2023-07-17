@@ -1,3 +1,5 @@
+package org.lostrabbitdigital.snake_game;
+
 public class Tuple {
 	public int x;
 	public int y;
@@ -22,10 +24,12 @@ public class Tuple {
 		return y;
 	}
 
+	// TODO: What is xF?
 	public int getXf() {
 		return xf;
 	}
 
+	// TODO: What is yF?
 	public int getYf() {
 		return yf;
 	}

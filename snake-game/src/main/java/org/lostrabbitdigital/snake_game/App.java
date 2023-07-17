@@ -1,10 +1,12 @@
+package org.lostrabbitdigital.snake_game;
+
 import javax.swing.JFrame;
 
-public class Main {
+public class App {
 
 	public static void main(String[] args) {
 
-		// Initialise the window
+		// Initialize the window
 		Window f1 = new Window();
 
 		// Set window properties

@@ -1,3 +1,5 @@
+package org.lostrabbitdigital.snake_game;
+
 import java.util.ArrayList;
 import java.awt.Color;
 
@@ -14,9 +16,9 @@ public class TileData {
 	public TileData(int col) {
 		// Add the colors to the array
 		// Lets add the color to the arrayList
-		gameColors.add(Color.DARK_GRAY);// 0
-		gameColors.add(Color.YELLOW); // 1
-		gameColors.add(Color.GREEN); // 2
+		gameColors.add(Color.GREEN);// Snake
+		gameColors.add(Color.YELLOW); // Food
+		gameColors.add(Color.DARK_GRAY); // Background
 		color = col;
 
 		// TODO: Explain this

@@ -1,3 +1,5 @@
+package org.lostrabbitdigital.snake_game;
+
 import java.awt.GridLayout;
 import java.awt.event.KeyListener;
 import java.util.ArrayList;
@@ -41,7 +43,7 @@ class Window extends JFrame {
 		Tuple position = new Tuple(10, 10);
 		// passing this value to the controller
 		ThreadsController controller = new ThreadsController(position);
-		
+
 		// Start the game
 		controller.start();
 
