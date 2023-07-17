@@ -40,7 +40,7 @@ class Window extends JFrame {
 		}
 
 		// Initial position of the snake
-		Tuple position = new Tuple(10, 10);
+		Tuple position = new Tuple(5, height / 2);
 		// passing this value to the controller
 		ThreadsController controller = new ThreadsController(position);
 

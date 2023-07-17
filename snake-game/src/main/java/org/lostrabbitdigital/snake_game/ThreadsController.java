@@ -7,7 +7,7 @@ public class ThreadsController extends Thread {
 	ArrayList<ArrayList<TileData>> Tiles = new ArrayList<ArrayList<TileData>>();
 	Tuple headSnakePos;
 	int sizeSnake = 2;
-	long speed = 50;
+	long speed = 75;
 	public static int directionSnake;
 
 	ArrayList<Tuple> positions = new ArrayList<Tuple>();
@@ -31,19 +31,19 @@ public class ThreadsController extends Thread {
 
 	}
 
-	// Important part :
+	// Run the game
 	public void run() {
 		while (true) {
 			renderSnake();
 			moveSnake(directionSnake);
 			checkCollision();
 			deleteTail();
-			pauser();
+			delay();
 		}
 	}
 
-	// delay between each move of the snake
-	private void pauser() {
+	// Delay between each move of the snake
+	private void delay() {
 		try {
 			sleep(speed);
 		} catch (InterruptedException e) {
@@ -76,7 +76,7 @@ public class ThreadsController extends Thread {
 	private void stopTheGame() {
 		System.out.println("You have died, \n Score: #");
 		while (true) {
-			pauser();
+			delay();
 		}
 	}
 
