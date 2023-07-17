@@ -7,8 +7,8 @@ import javax.swing.JFrame;
 class Window extends JFrame {
 	private static final long serialVersionUID = -2542001418764869760L;
 	public static ArrayList<ArrayList<DataOfSquare>> Grid;
-	public static int width = 20;
-	public static int height = 20;
+	public static int width = 50;
+	public static int height = 50;
 
 	public Window() {
 
@@ -26,8 +26,8 @@ class Window extends JFrame {
 			Grid.add(data);
 		}
 
-		// Setting up the layout of the panel
-		getContentPane().setLayout(new GridLayout(20, 20, 0, 0));
+		// Setup the panel layout
+		getContentPane().setLayout(new GridLayout(width, height, 0, 0));
 
 		// Start & pauses all threads, then adds every square of each thread to the
 		// panel
@@ -37,21 +37,15 @@ class Window extends JFrame {
 			}
 		}
 
-		// initial position of the snake
+		// Initial position of the snake
 		Tuple position = new Tuple(10, 10);
 		// passing this value to the controller
-		ThreadsController c = new ThreadsController(position);
-		// Let's start the game now..
-		c.start();
+		ThreadsController controller = new ThreadsController(position);
+		
+		// Start the game
+		controller.start();
 
-		// Links the window to the keyboardlistenner.
-		this.addKeyListener((KeyListener) new KeyboardListener());
-
-		// To do : handle multiplayers .. The above works, test it and see what happens
-
-		// Tuple position2 = new Tuple(13,13);
-		// ControlleurThreads c2 = new ControlleurThreads(position2);
-		// c2.start();
-
+		// Link the window to Keyboard class
+		this.addKeyListener((KeyListener) new Keyboard());
 	}
 }

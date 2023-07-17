@@ -4,7 +4,7 @@ import java.util.ArrayList;
 public class ThreadsController extends Thread {
 	ArrayList<ArrayList<DataOfSquare>> Squares = new ArrayList<ArrayList<DataOfSquare>>();
 	Tuple headSnakePos;
-	int sizeSnake = 3;
+	int sizeSnake = 2;
 	long speed = 50;
 	public static int directionSnake;
 
