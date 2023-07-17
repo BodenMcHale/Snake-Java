@@ -1,5 +1,5 @@
 # Compiled class file
-*.class
+src/*.class
 
 # Log file
 *.log
@@ -23,5 +23,5 @@
 hs_err_pid*
 replay_pid*
 
-# Misc:
+# Misc
 .DS_Store
