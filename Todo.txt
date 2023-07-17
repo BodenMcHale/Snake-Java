@@ -8,3 +8,5 @@
 - Change snake color to green
 - Expand play area
 - Restart button 
+- Game over screen
+O - Larger screen
