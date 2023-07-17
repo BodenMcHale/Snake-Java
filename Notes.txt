@@ -1,0 +1,10 @@
+- Don't allow player to backtrack causing a collision (Going left then pressing right is a failure)
+- Slow down snake
+- Print amount of food to console
+- Replace "Yummy" with "Food: #"
+- Replace "COLLISION" with "You have died. \n Score: #"
+- Change background color from white to a soft black
+- Change food color to yellow 
+- Change snake color to green
+- Expand play area
+- Restart button 
